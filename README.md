@@ -42,10 +42,11 @@ IntelliJ IDEA Setup
 #### Local Execution from console
 To run tests locally with specific parameters, use the following command:
 ```bash
-./gradlew clean test -Dtest.environment=local -Dbase.url=https://s.gsb.co.zm/ -Dis.headless=false -Dtimeout=10000
+./gradlew clean test -'Dtest.environment'='local' -'Dbase.url'='https://s.gsb.co.zm/'  -'Dis.headless'='true' -'Dtimeout'='5000'
 ```
 
 ## Parallel execution
+edit build.gradle file row with maxParallelForks
 ```bash
 maxParallelForks = System.getProperty('max.parallel.forks', '4').toInteger()
 ```
