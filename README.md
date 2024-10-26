@@ -1,6 +1,6 @@
 # Automated Testing Project
 
-###### This project is designed for automated testing using Java, TestNG, Selenide, Allure and Lombok. It supports running tests both locally and in a Continuous Integration (CI) environment.
+###### This project is designed for automated testing using Java, TestNG, Selenide, Allure and Lombok. It supports running tests both locally and in a Continuous Integration (CI) environment and parallel execution.
 
 
 ## Prerequisites
@@ -25,6 +25,7 @@ Ensure the Lombok plugin is installed and enabled in your IDE to prevent any com
 To set up environment variables and differentiate between local and CI environments:
 
 IntelliJ IDEA Setup
+#### Local Execution from IDEA
 
 1. Go to Run > Edit Configurations.
 2. Select Templates > TestNG.
@@ -38,10 +39,19 @@ IntelliJ IDEA Setup
 
 
 ## Running Tests
-#### Local Execution
+#### Local Execution from console
 To run tests locally with specific parameters, use the following command:
 ```bash
 ./gradlew clean test -Dtest.environment=local -Dbase.url=https://s.gsb.co.zm/ -Dis.headless=false -Dtimeout=10000
+```
+
+## Parallel execution
+```bash
+maxParallelForks = System.getProperty('max.parallel.forks', '4').toInteger()
+```
+in console just add additional parameter
+```bash
+-'Dmax.parallel.forks'='6'
 ```
 
 ## Generating and Viewing Allure Reports
