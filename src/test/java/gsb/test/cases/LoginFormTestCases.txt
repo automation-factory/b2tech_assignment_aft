@@ -1,0 +1,65 @@
+Test Cases for the Login Form:
+
+# Positive Test Cases:
+
+Login with valid credentials
+Steps: Enter valid phone number (with valid country code) and password, then click the "Login" button.
+Expected Result: User successfully logs in.
+Technique: Equivalence Partitioning.
+
+Boundary values for phone number and password length (min/max)
+Steps: Enter the minimum and maximum allowable length for the phone number and password.
+Expected Result: Login succeeds if the phone number and password are within the accepted limits.
+Technique: Boundary Value Analysis.
+
+Successful password reset request with a registered phone number (More technical details needed!)
+Steps: Enter a valid and registered phone number in the input field and click "Send"
+Expected Result: Display message valid message
+Technique: Positive Testing, Equivalence Partitioning.
+
+# Negative Test Cases:
+
+Empty phone number and password fields
+Steps: Leave both fields empty and click "Login"
+Expected Result: Error messages under the inputs are "Phone number is required" and "Password is required"
+Technique: State Transition Testing, Negative Testing.
+
+Incorrect credentials
+Steps: Enter an incorrect phone number and password and click "Login"
+Expected Result: Display message under password input "The Phone number or password entered is invalid"
+Technique: Equivalence Partitioning, Negative Testing.
+
+Exceeding maximum length for phone number and password
+Steps: Enter values exceeding the maximum allowed length.
+Expected Result: Excess characters are truncated or input is blocked.
+Technique: Boundary Value Analysis.
+
+Special characters in phone number and password (More technical details needed!)
+Steps: Enter phone number and password with disallowed characters. (Ex: with ctrl+v combination paste random string)
+Expected Result: Display error message "Mobile provider prefix is not correct."
+Technique: Negative Testing.
+
+Click "Login" with only one field filled (either phone number or password)
+Steps: Enter phone number without password, then password without phone number, and click "Login."
+Expected Result: Display messages are "Phone number is required" / "Password is required"
+Technique: State Transition Testing, Negative Testing.
+
+UI elements initial state upon page load
+Steps: Load the login page and check the initial state of the "Login" button before any input.
+Expected Result: The "Login" button should be disabled until fields are filled.
+Technique: State Transition Testing.
+
+SQL injection in phone number or password field
+Steps: Input "' OR '1'='1" or similar SQL code in either field.
+Expected Result: Login fails, system is resilient to SQL injection.
+Technique: Negative Testing, Security Testing.
+
+XSS injection in phone number or password field
+Steps: Enter <script>alert(1)</script> in the phone number or password field.
+Expected Result: System blocks script injection, preventing XSS attacks.
+Technique: Security Testing.
+
+Request password reset with invalid phone number format
+Steps: Enter an incorrectly formatted phone number (e.g., missing digits or including letters)"
+Expected Result: Display message “Mobile provider prefix is not correct.” and send button is disabled
+Technique: Boundary Value Analysis, Negative Testing.

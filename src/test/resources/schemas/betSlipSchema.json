@@ -1,0 +1,79 @@
+{
+  "type": "object",
+  "properties": {
+    "result": {
+      "type": "object",
+      "properties": {
+        "errorDescription": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "additionalInfo": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "eventData": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "closedOdds": {
+          "type": [
+            "object",
+            "null"
+          ]
+        },
+        "errorCode": {
+          "type": "integer"
+        },
+        "resultCode": {
+          "type": "integer"
+        },
+        "errorCodeDescription": {
+          "type": "string"
+        }
+      },
+      "required": [
+        "errorCode",
+        "resultCode",
+        "errorCodeDescription"
+      ]
+    },
+    "data": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "dataStructure": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "additionalData": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "userInfo": {
+      "type": [
+        "object",
+        "null"
+      ]
+    },
+    "isSuccessfull": {
+      "type": "boolean"
+    }
+  },
+  "required": [
+    "result",
+    "isSuccessfull"
+  ]
+}
